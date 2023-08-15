@@ -39,16 +39,3 @@ fclean		:	clean
 re			:	fclean all
 
 PHONY		: all bonus clean fclean re
-
-TEST_NAME	=	test
-
-test		:	
-				gcc main.c $(NAME) -o $(TEST_NAME)
-# gcc -Wall -Werror -Wextra main.c $(NAME) -o $(TEST_NAME)
-
-test_start	:
-				./$(TEST_NAME)
-
-test_clean	:	
-				$(RM_FILE) $(TEST_NAME)
-				
