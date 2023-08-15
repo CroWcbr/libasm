@@ -1,12 +1,12 @@
 extern __errno_location
 section .text
-	global ft_write
+	global ft_read
 
-ft_write:
-	mov		rax, 1
+ft_read:
+	xor		rax, rax
 	syscall
 	test	rax, rax
-	js		.error
+	js		.error	; Jump if Sign
 	ret
 
 .error:

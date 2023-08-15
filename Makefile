@@ -8,7 +8,9 @@ SRC_DIR		= 	./src
 SRC			=	ft_strlen.s \
 				ft_strcpy.s \
 				ft_strcmp.s \
-				ft_write.s
+				ft_write.s \
+				ft_read.s \
+				ft_strdup.s
 
 OBJ_DIR		=	./obj
 OBJ			=	$(addprefix $(OBJ_DIR)/, $(SRC:.s=.o))
@@ -41,7 +43,8 @@ PHONY		: all bonus clean fclean re
 TEST_NAME	=	test
 
 test		:	
-				gcc -Wall -Werror -Wextra main.c $(NAME) -o $(TEST_NAME)
+				gcc main.c $(NAME) -o $(TEST_NAME)
+# gcc -Wall -Werror -Wextra main.c $(NAME) -o $(TEST_NAME)
 
 test_start	:
 				./$(TEST_NAME)

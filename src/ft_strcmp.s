@@ -5,27 +5,17 @@ ft_strcmp:
 	xor		rax, rax
 
 .loop:
-	mov		bh, byte [rsi + rax]
-	mov		ch, byte [rdi + rax]
-	cmp		bh, ch
-	jl		.less
-	jg		.greater
-	test	bh, bh
-	je		.equel
+	mov		bl, byte [rsi + rax]
+	mov		cl, byte [rdi + rax]
+	cmp		bl, cl
+	jl		.end
+	jg		.end
+	test	bl, bl
+	je		.end
 	inc		rax
 	jmp		.loop
 
-.less:
-	mov		rax, 1
-	jmp		.done
-
-.greater:
-	mov		rax, -1
-	jmp		.done
-
-.equel:
-	xor		rax, rax
-	jmp		.done
-
-.done:
+.end:
+	sub	cl, bl
+	movsx	rax, cl	; move keeping the sign bytes
 	ret
