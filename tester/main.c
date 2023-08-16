@@ -9,9 +9,9 @@
 #include "libasm.h"
 
 #define COUNT	10000
-#define RESET   "\x1B[0m"
-#define RED     "\x1B[31m"
-#define GREEN   "\x1B[32m"
+#define RESET	"\x1B[0m"
+#define RED		"\x1B[31m"
+#define GREEN	"\x1B[32m"
 
 void	test_result(int result)
 {

@@ -22,4 +22,14 @@ int 			ft_atoi_base(char *str, char *base);
 // • ft_list_sort (like the one in the piscine)
 // • ft_list_remove_if (like the one in the piscine)
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;	
+}t_list;
+
+size_t	ft_list_size(t_list *head);
+void	ft_list_push_front(t_list **head, void *content);
+
+
 #endif
